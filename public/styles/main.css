@@ -1,4 +1,3 @@
-
 :root {
     --color-background: #F0F0F7;
     --color-primary-lighter: #9871F5;
@@ -19,23 +18,23 @@
     --color-box-base: #FFFFFF;
     --color-box-footer: #FAFAFC;
     --color-small-info: #C1BCCC;
-    font-size: 60%; /* controle das medidas rem */
-    
+    font-size: 60%;
+    /* controle das medidas rem */
     /* tamanho fonte padrão: 16px = 100%  = 1rem (relativo ao valor colocado no root) */
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 html,
-body{
+body {
     height: 100vh;
 }
-body{
+
+body {
     background-color: var(--color-background);
     display: flex;
     align-items: center;
@@ -53,7 +52,13 @@ textarea {
     color: var(--color-text-base);
 }
 
-#container{
+#container {
     width: 90vw;
     max-width: 700px;
+}
+
+@media (min-width: 700px) {
+     :root {
+        font-size: 62.5%;
+    }
 }
