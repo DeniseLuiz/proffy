@@ -1,0 +1,24 @@
+{
+    "name": "proffy",
+    "version": "1.0.0",
+    "description": "oiie",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeniseLuiz/proffy.git"
+    },
+    "keywords": [],
+    "author": "Denise Luiz",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DeniseLuiz/proffy/issues"
+    },
+    "homepage": "https://github.com/DeniseLuiz/proffy#readme",
+    "dependencies": {
+        "express": "^4.17.1"
+    },
+    "devDependencies": {}
+}
