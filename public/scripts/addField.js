@@ -1,7 +1,20 @@
 document.querySelector('#add-time')
     .addEventListener('click', cloneField);
+// addEventListener precisa argumentar qual o tipo de evento (click) e a ação (cloneField)
 
 function cloneField() {
-    const fields = document.querySelector('.schedule-item').cloneNode(true);
-    document.querySelector('#schedule-item').appendChild(fields);
-}
+    const newFieldContainer = document.querySelector('.schedule-item').cloneNode(true);
+    // caso não seja passado o argumento true no cloneNode, o js vai repricar a div vazia, sem clonar os devidos filhos.
+
+    const fields = newFieldContainer.querySelectorAll('input');
+    // comando para selecionar todos os inputs do componente newFieldContainer
+
+    // comando para limpar cada um dos campos
+    fields.forEach(function(field) {
+        field.value = '';
+    });
+
+    document.querySelector('#schedule-items').appendChild(newFieldContainer);
+    // esse trecho do código sinaliza ao js onde o elemento da linha 6 deve ser colocado. como filho do id schedule-items
+
+};

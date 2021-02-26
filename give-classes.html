@@ -43,6 +43,7 @@
                     <div class="input-block">
                         <label for="avatar">Link da sua foto <small>(comece com https://)</small></label>
                         <input name="avatar" id="avatar" type="url" required>
+                        <!-- type url não permite que não seja iniciado com http:// -->
                     </div>
 
                     <div class="input-block">
@@ -85,6 +86,7 @@
                 <fieldset id="schedule-items">
                     <legend>Horários disponíveis
                         <button type="button" id="add-time">+ Novo horário</button>
+                        <!-- type button não submete o formulário -->
                     </legend>
 
                     <div class="schedule-item">
