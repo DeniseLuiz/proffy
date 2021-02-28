@@ -16,5 +16,5 @@ function cloneField() {
 
     document.querySelector('#schedule-items').appendChild(newFieldContainer);
     // esse trecho do código sinaliza ao js onde o elemento da linha 6 deve ser colocado. como filho do id schedule-items
-
+    //COLOCAR A OPÇÃO EXCLUIR 
 };
