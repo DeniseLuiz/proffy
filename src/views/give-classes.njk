@@ -63,23 +63,17 @@
                     <div class="select-block">
                         <label for="subject">Matéria</label>
                         <select name="subject" id="subject" id="subject" required>
-                            <option value="">Selecione uma opção</option>
-                            <option value="1">Artes</option>
-                            <option value="2">Biologia</option>
-                            <option value="3">Ciências</option>
-                            <option value="4">Educação Física</option>
-                            <option value="5">Física</option>
-                            <option value="6">Geografia</option>
-                            <option value="7">História</option>
-                            <option value="8">Matemática</option>
-                            <option value="9">Português</option>
-                            <option value="10">Química</option>
+                             <option value="" disabled="" hidden="">Selecione uma opção</option>
+                            {%for subject in subjects %}
+                                <!-- loop é um objeto disponibilizado pelo próprio nunjucks. A partir dele podemos capturar os index -->
+                                <option value="{{loop.index}}">{{subject}}</option>
+                            {%endfor%}
                         </select>
                     </div>
 
                     <div class="input-block">
                         <label for="cost">Custo da sua hora/aula<small>(R$)</small></label>
-                        <input type="cost" id="cost" type="number" required>
+                        <input name="cost" type="cost" id="cost" type="number" required>
                     </div>
                 </fieldset>
 
@@ -94,13 +88,10 @@
                             <label for="weekday">Dia da semana</label>
                             <select name="weekday[]" required>
                                 <option value="" >Selecione uma opção</option>
-                                <option value="">Domingo</option>
-                                <option value="">Segunda-feira</option>
-                                <option value="">Terça-feira</option>
-                                <option value="">Quarta-feira</option>
-                                <option value="">Quinta-feira</option>
-                                <option value="">Sexta-feira</option>
-                                <option value="">Sábado</option>
+                                {%for weekday in weekdays %}
+                                    <!-- loop.index0 selecionar a partir do zero -->
+                                    <option value="{{loop.index0}}">{{weekday}}</option>
+                                {%endfor%}
                             </select>
                         </div>
 

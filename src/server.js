@@ -20,18 +20,56 @@ const proffys = [{
     time_to: [1220]
 }, ]
 
+const subjects = [
+    'Artes',
+    'Biologia',
+    'Ciências',
+    'Educação Física',
+    'Física',
+    'Geografia',
+    'História',
+    'Matemática',
+    'Português',
+    'Química',
+]
+
+const weekdays = [
+    "Domingo",
+    "Segunda-feira",
+    "Terça-feira",
+    "Quarta-feira",
+    "Quinta-feira",
+    "Sexta-feira",
+    "Sábado",
+]
+
+function getSubject(subjectNumber) {
+    const arrayPosition = +subjectNumber - 1 // o + garante que se trata de um número
+    return subjects[arrayPosition]
+}
 
 function pageLanding(req, res) {
     return res.render("index.html")
 }
 
 function pageStudy(req, res) {
-    return res.render("study.njk", { proffys, title: "finalmente deu certo essa porra" })
+    const filters = req.query
+    return res.render("study.njk", { proffys, filters, subjects, weekdays })
 }
 
 function pageGiveClasses(req, res) {
-    return res.render("give-classes.html")
+    const data = req.query
+    const isNotEmpty = Object.keys(data).length > 0
+
+    if (isNotEmpty) {
+        data.subject = getSubject(data.subject)
+        proffys.push(data)
+        return res.redirect("/study")
+    } else {
+        return res.render("give-classes.njk", { subjects, weekdays })
+    }
 }
+
 /*FUNCTIONS SEM O NUNJUCKS
 
 function pageLanding(req, res) {
@@ -52,14 +90,12 @@ const server = express()
 const nunjucks = require('nunjucks')
 
 
-nunjucks.configure('src/views', {
-        express: server,
-        noCache: true,
-        autoescape: false,
+nunjucks.configure('src/views', { // pasta em que estão os arquivos html, objeto que indica o servidor que está sendo utilizado. noCache = true 
+    express: server,
+    noCache: true,
+    autoescape: false,
+})
 
-
-    })
-    // pasta em que estão os arquivos html, objeto que indica o servidor que está sendo utilizado. noCache = true 
 server
 // configurar arquivos estáticos
     .use(express.static('public'))
