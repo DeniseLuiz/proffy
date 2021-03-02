@@ -1,6 +1,7 @@
-const database = require('./db.js')
-const createProffy = require('./createProffy.js')
+const database = require('./db')
+const createProffy = require('./createProffy')
 database.then(async(db) => {
+
     proffyValue = {
         name: "Denise Luiz",
         avatar: "https://avatars.githubusercontent.com/u/61203186?s=460&u=accb91eed17f2fb6ddb72abf680fed639b64804b&v=4",
