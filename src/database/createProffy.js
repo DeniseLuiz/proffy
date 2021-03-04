@@ -52,3 +52,7 @@ module.exports = async function(db, { proffyValue, classValue, classScheduleValu
         await Promise.all(insertedAllClassScheduleValues)
     }
     // verificar name em casa um dos arquivos
+    // verificar name em casa um dos arquivos
+    // verificar name em casa um dos arquivos
+    // verificar name em casa um dos arquivos
+    // verificar name em casa um dos arquivos
