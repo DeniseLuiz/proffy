@@ -10,7 +10,7 @@ database.then(async(db) => {
     }
 
     classValue = {
-        subject: "Química",
+        subject: 1,
         cost: "20",
         //    id proffy do bando de dados
     }
