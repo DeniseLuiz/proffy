@@ -1,6 +1,5 @@
 module.exports = async function(db, { proffyValue, classValue, classScheduleValues }) {
         // Inserir dados na tabela de teachers
-        console.log(proffyValue);
         const insertedProffy = await db.run(`
         INSERT INTO proffys (
             name, 
