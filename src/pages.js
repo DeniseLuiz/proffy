@@ -17,7 +17,6 @@ async function pageStudy(req, res) {
                 JOIN classes ON (classes.proffy_id = proffys.id)
                 WHERE classes.proffy_id = proffys.id;
             `)
-
         proffys.map((proffy) => {
             proffy.subject = getSubject(proffy.subject)
         })
