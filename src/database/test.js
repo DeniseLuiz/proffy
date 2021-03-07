@@ -31,9 +31,8 @@ database.then(async(db) => {
 
     // await createProffy(db, { proffyValue, classValue, classScheduleValues })
 
-    // Consultar todos os Proffys
+    //    CONSULTAS
     const selectProffys = await db.all("SELECT * FROM proffys")
-        // console.log(selectProffys)
 
     const selectClassesAndProffys = await db.all(`
         SELECT classes.*, proffys.*                             
@@ -41,7 +40,6 @@ database.then(async(db) => {
         JOIN classes ON (classes.proffy_id = proffys.id)
         WHERE classes.proffy_id = 1;
     `)
-        // console.log(selectClassesAndProffys)
 
     const selectClassesSchedules = await db.all(`
         SELECT class_schedule.*
@@ -52,5 +50,4 @@ database.then(async(db) => {
         AND class_schedule.time_to > "520"
     `)
 
-    console.log(selectClassesSchedules)
 })
