@@ -38,7 +38,7 @@ async function pageStudy(req, res) {
 }
 
 function pageGiveClasses(req, res) {
-    const data = req.query
+    const data = req.query //res.body ao invés do req.query para que os dados não fiquem a mostrar na barra de navegação
     const isNotEmpty = Object.keys(data).length > 0
 
     if (isNotEmpty) {
