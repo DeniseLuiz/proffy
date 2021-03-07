@@ -38,22 +38,30 @@ async function pageStudy(req, res) {
 }
 
 function pageGiveClasses(req, res) {
-    const data = req.query //res.body ao invés do req.query para que os dados não fiquem a mostrar na barra de navegação
-    const isNotEmpty = Object.keys(data).length > 0
-
-    if (isNotEmpty) {
-        data.subject = getSubject(data.subject)
-        proffys.push(data)
-        return res.redirect("/study")
-    } else {
-        return res.render("give-classes.njk", { subjects, weekdays })
-    }
+    return res.render("give-classes.njk", { subjects, weekdays })
 }
 
+function saveClasses(req, res) {
+    const createProffy = require('./database/createProffy')
+    const data = req.body
+
+    return res.redirect("/study")
+
+    // ANTES DO SAVECLASSES: 
+    // const data = req.body //res.body ao invés do req.query para que os dados não fiquem a mostrar na barra de navegação
+    // const isNotEmpty = Object.keys(data).length > 0
+
+    // if (isNotEmpty) {
+    //     data.subject = getSubject(data.subject)
+    //     proffys.push(data)
+    //     return res.redirect("/study")
+    // }
+}
 module.exports = {
         pageLanding,
         pageStudy,
-        pageGiveClasses
+        pageGiveClasses,
+        saveClasses
     }
     /*FUNCTIONS SEM O NUNJUCKS
 
