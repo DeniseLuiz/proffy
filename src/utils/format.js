@@ -26,8 +26,9 @@ function getSubject(subjectNumber) {
     return subjects[arrayPosition]
 }
 
-module.exports = (
+module.exports = {
     subjects,
     weekdays,
     getSubject
-)
+
+}
