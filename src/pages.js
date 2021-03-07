@@ -10,7 +10,18 @@ async function pageStudy(req, res) {
     const filters = req.query
 
     if (!filters.subject || !filters.weekday || !filters.time) {
-        return res.render("study.njk", { filters, subjects, weekdays })
+        const db = await Database
+        const proffys = await db.all(`
+                SELECT classes.*, proffys.*                             
+                FROM proffys 
+                JOIN classes ON (classes.proffy_id = proffys.id)
+                WHERE classes.proffy_id = proffys.id;
+            `)
+
+        proffys.map((proffy) => {
+            proffy.subject = getSubject(proffy.subject)
+        })
+        return res.render("study.njk", { proffys, filters, subjects, weekdays })
     }
 
     const timeToMinutes = convertHoursToMinutes(filters.time)
