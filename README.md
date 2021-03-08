@@ -12,8 +12,9 @@
 ##########################################################################
 ##  Definição dos endpoints:                                         ##
 ##########################################################################
+~~~html
 <br>
-* [GET]['/']:<br>
+* [GET]['/']:
 <p>Renderiza a view 'index.html'.</p>
 
 *[GET]['/study']:<br>
@@ -34,7 +35,7 @@ A view permite a filtragem de resultados.<br>
 &ensp;&ensp;&ensp;&ensp;&ensp;<p>required: true.</p>
 [GET]['/give-classes']:
 [POST]['/save-classes']:
-
+~~~
 _________________________________________________________________
 - **Próximos pontos de melhoria/refatoração:**
 * Página de cadastro-success, com redirecionamento para a página '/study';
