@@ -17,24 +17,25 @@
 * [GET]['/']:
 <p>Renderiza a view 'index.html'.</p>
 
-*[GET]['/study']:<br>
-Renderiza a view 'study.nkj' com os professores cadastrados no DB já sendo apresentados.
-A view permite a filtragem de resultados.<br>
-<p>queryParameters:</p>
-&nbsp;&nbsp;&nbsp;&nbsp;<p>subject: <br></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>description: Matérias disponíveis para estudo.</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>type: integer (select)</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>required: true.</p>
-&nbsp;&nbsp;&nbsp;&nbsp;<p>weekday: </p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>description: Dias da semana disponíveis para estudo.</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>type: string (select)</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>required: true.</p>
-&nbsp;&nbsp;&nbsp;&nbsp;<p>time: </p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>description: horários disponíveis para estudo.</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>type: integer</p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>required: true.</p>
-[GET]['/give-classes']:
-[POST]['/save-classes']:
+*[GET]['/study']:
+<p>Renderiza a view 'study.nkj' com os professores cadastrados no DB já sendo apresentados.
+A view permite a filtragem de resultados.</p>
+***<p>queryParameters:</p>
+<p>*** subject: <br></p>
+<p>description: Matérias disponíveis para estudo.</p>
+<p>type: integer (select)</p>
+<p>required: true.</p>
+***<p>weekday: </p>
+<p>description: Dias da semana disponíveis para estudo.</p>
+<p>type: string (select)</p>
+<p>required: true.</p>
+***<p>time: </p>
+<p>description: horários disponíveis para estudo.</p>
+<p>type: integer</p>
+<p>required: true.</p>
+
+*[GET]['/give-classes']:
+*[POST]['/save-classes']:
 
 _________________________________________________________________
 - **Próximos pontos de melhoria/refatoração:**
