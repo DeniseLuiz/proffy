@@ -20,19 +20,19 @@
 *[GET]['/study']:
 <p>Renderiza a view 'study.nkj' com os professores cadastrados no DB já sendo apresentados.
 A view permite a filtragem de resultados.</p>
-***<p>queryParameters:</p>
-<p>*** subject: <br></p>
-<p>description: Matérias disponíveis para estudo.</p>
-<p>type: integer (select)</p>
-<p>required: true.</p>
-***<p>weekday: </p>
-<p>description: Dias da semana disponíveis para estudo.</p>
-<p>type: string (select)</p>
-<p>required: true.</p>
-***<p>time: </p>
-<p>description: horários disponíveis para estudo.</p>
-<p>type: integer</p>
-<p>required: true.</p>
+<p>***queryParameters:</p>
+<p>______**subject**:</p>
+<p>___________description: Matérias disponíveis para estudo.</p>
+<p>___________type: integer (select)</p>
+<p>___________required: true.</p>
+<p>_______**weekday**: </p>
+<p>___________description: Dias da semana disponíveis para estudo.</p>
+<p>___________type: string (select)</p>
+<p>___________required: true.</p>
+<p>______**time**: </p>
+<p>___________description: horários disponíveis para estudo.</p>
+<p>___________type: integer</p>
+<p>___________required: true.</p>
 
 *[GET]['/give-classes']:
 *[POST]['/save-classes']:
