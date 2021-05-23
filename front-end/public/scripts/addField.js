@@ -14,7 +14,9 @@ function cloneField() {
         field.value = '';
     });
 
+    const neuButoon = " <button type='button' id='exluir-time'> + Excluir Horário</button>"
     document.querySelector('#schedule-items').appendChild(newFieldContainer);
-    // esse trecho do código sinaliza ao js onde o elemento da linha 6 deve ser colocado. como filho do id schedule-items
-    //COLOCAR A OPÇÃO EXCLUIR 
+    document.querySelector('#add-time').appendChild(neuButoon)
+        // esse trecho do código sinaliza ao js onde o elemento da linha 6 deve ser colocado. como filho do id schedule-items
+        //COLOCAR A OPÇÃO EXCLUIR 
 };
